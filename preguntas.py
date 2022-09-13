@@ -152,7 +152,6 @@ def pregunta_09():
     tbl0['year'] = tbl0['_c3'].map(
         lambda x: x.split("-")[0]
         )
-
     return tbl0
 
 def pregunta_10():
@@ -171,6 +170,9 @@ def pregunta_10():
     """
     return
 
+print(tbl0.groupby('_c1')
+    .agg({'_c2': lambda x: ":".join(map(str,sorted(x.tolist())))}, axis=1)
+    )
 
 def pregunta_11():
     """
@@ -188,8 +190,11 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    return
+    
+    a = tbl1.groupby('_c0')
+        .agg({'_c4': lambda x: ",".join(sorted(x.tolist()))}, axis=1)
 
+    return a
 
 def pregunta_12():
     """
