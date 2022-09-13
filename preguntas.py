@@ -155,12 +155,6 @@ def pregunta_09():
 
     return tbl0
 
-tbl0['year'] = tbl0['_c3'].map(
-        lambda x: x.split("-")[0]
-        )
-print(tbl0)
-
-
 def pregunta_10():
     """
     Construya una tabla que contenga _c1 y una lista separada por ':' de los valores de
