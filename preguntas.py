@@ -86,7 +86,6 @@ def pregunta_05():
     """
     return tbl0.groupby('_c1')['_c2'].max()
 
-
 def pregunta_06():
     """
     Retorne una lista con los valores unicos de la columna _c4 de del archivo `tbl1.csv`
@@ -96,7 +95,8 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
-    return
+    lista = tbl1['_c4'].sort_values().unique().tolist()
+    return([x.upper() for x in lista])
 
 
 def pregunta_07():
@@ -112,7 +112,7 @@ def pregunta_07():
     E    67
     Name: _c2, dtype: int64
     """
-    return
+    return tbl0.groupby('_c1')['_c2'].sum()
 
 
 def pregunta_08():
@@ -130,9 +130,10 @@ def pregunta_08():
     39   39   E    5  1998-01-26    44
 
     """
-    return
+    tbl0['suma']=tbl0.loc[:,['_c0', '_c2']].sum(axis=1)
+    return tbl0
 
-
+    
 def pregunta_09():
     """
     Agregue el año como una columna al archivo `tbl0.tsv`.
@@ -148,7 +149,16 @@ def pregunta_09():
     39   39   E    5  1998-01-26  1998
 
     """
-    return
+    tbl0['year'] = tbl0['_c3'].map(
+        lambda x: x.split("-")[0]
+        )
+
+    return tbl0
+
+tbl0['year'] = tbl0['_c3'].map(
+        lambda x: x.split("-")[0]
+        )
+print(tbl0)
 
 
 def pregunta_10():
