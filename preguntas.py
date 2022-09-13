@@ -190,17 +190,8 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    
-    a = (tbl1.groupby('_c0')
-        .agg({'_c4': lambda x: ",".join(sorted(x.tolist()))}, axis=1))
 
     return tbl1.groupby('_c0').agg({'_c4': lambda x: ",".join(sorted(x.tolist()))}, axis=1)
-
-a = (tbl1.groupby('_c0')
-    .agg({'_c4': lambda x: ",".join(sorted(x.tolist()))}, axis=1))
-
-print (a)
-
 
 def pregunta_12():
     """
