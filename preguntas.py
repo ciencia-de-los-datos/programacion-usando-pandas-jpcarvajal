@@ -191,7 +191,7 @@ def pregunta_11():
     39   39    a,d,f
     """
 
-    return tbl1.groupby('_c0').agg({'_c4': lambda x: ",".join(sorted(x.tolist()))}, axis=1)
+    return tbl1.groupby('_c0').agg({'_c4': lambda x: ",".join(sorted(x.tolist()))}, axis=1).reset_index()  #!!!!!!!!!!!Preguntar por lo del índice
 
 def pregunta_12():
     """
