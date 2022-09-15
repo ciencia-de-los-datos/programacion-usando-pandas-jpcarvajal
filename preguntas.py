@@ -210,9 +210,9 @@ def pregunta_12():
     """
     tbl2['_c5']=tbl2['_c5a']+":"+tbl2['_c5b'].astype(str)
 
-    return tbl2.groupby('_c0').agg({'_c5': lambda x: ",".join(sorted(x.tolist()))}, axis=1).reset_index
+    return tbl2.groupby('_c0').agg({'_c5': lambda x: ",".join(sorted(x.tolist()))}, axis=1).reset_index()
 
-#print(pregunta_11().columns.tolist())
+print(pregunta_12().columns.tolist())
 
 #print(tbl2.groupby('_c0').agg({'_c5': lambda x: ",".join(sorted(x.tolist()))}, axis=1).reset_index)
 
