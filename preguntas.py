@@ -170,9 +170,9 @@ def pregunta_10():
     """
     return
 
-"""print(tbl0.groupby('_c1')
+""" print(tbl0.groupby('_c1')
     .agg({'_c2': lambda x: ":".join(map(str,sorted(x.tolist())))}, axis=1)
-    )"""
+    ) """
 
 def pregunta_11():
     """
@@ -208,6 +208,8 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
+    tbl2['_c5']=tbl2['_c5a']+":"+tbl2['_c5b'].astype(str)
+
     return tbl2.groupby('_c0').agg({'_c5': lambda x: ",".join(sorted(x.tolist()))}, axis=1).reset_index
 
 #print(tbl2.groupby('_c0').agg({'_c5': lambda x: ",".join(sorted(x.tolist()))}, axis=1).reset_index)
