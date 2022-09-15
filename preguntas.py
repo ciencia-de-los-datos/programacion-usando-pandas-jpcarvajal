@@ -212,6 +212,8 @@ def pregunta_12():
 
     return tbl2.groupby('_c0').agg({'_c5': lambda x: ",".join(sorted(x.tolist()))}, axis=1).reset_index
 
+#print(pregunta_11().columns.tolist())
+
 #print(tbl2.groupby('_c0').agg({'_c5': lambda x: ",".join(sorted(x.tolist()))}, axis=1).reset_index)
 
 
