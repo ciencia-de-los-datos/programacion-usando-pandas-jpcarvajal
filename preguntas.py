@@ -191,7 +191,7 @@ def pregunta_11():
     39   39    a,d,f
     """
 
-    return tbl1.groupby('_c0').agg({'_c4': lambda x: ",".join(sorted(x.tolist()))}, axis=1).reset_index()  #!!!!!!!!!!!Preguntar por lo del índice
+    return tbl1.groupby('_c0').agg({'_c4': lambda x: ",".join(sorted(x.tolist()))}, axis=1).reset_index()
 
 def pregunta_12():
     """
@@ -212,9 +212,6 @@ def pregunta_12():
 
     return tbl2.groupby('_c0').agg({'_c5': lambda x: ",".join(sorted(x.tolist()))}, axis=1).reset_index()
 
-#print(tbl2.groupby('_c0').agg({'_c5': lambda x: ",".join(sorted(x.tolist()))}, axis=1).reset_index)
-
-
 def pregunta_13():
     """
     Si la columna _c0 es la clave en los archivos `tbl0.tsv` y `tbl2.tsv`, compute la
@@ -231,4 +228,5 @@ def pregunta_13():
     """
 
     a = pd.merge(tbl0, tbl2)
-    return a.groupby('_c1').agg({'_c5b': lambda x: sum(x)}, axis=1).reset_index()
+    print(a.groupby('_c1')['_c5b'].sum())
+    return a.groupby('_c1')['_c5b'].sum()
