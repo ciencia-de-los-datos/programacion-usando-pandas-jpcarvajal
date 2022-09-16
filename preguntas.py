@@ -212,8 +212,6 @@ def pregunta_12():
 
     return tbl2.groupby('_c0').agg({'_c5': lambda x: ",".join(sorted(x.tolist()))}, axis=1).reset_index()
 
-print(pregunta_12().columns.tolist())
-
 #print(tbl2.groupby('_c0').agg({'_c5': lambda x: ",".join(sorted(x.tolist()))}, axis=1).reset_index)
 
 
@@ -231,4 +229,6 @@ def pregunta_13():
     E    275
     Name: _c5b, dtype: int64
     """
-    return
+
+    a = pd.merge(tbl0, tbl2)
+    return a.groupby('_c1').agg({'_c5b': lambda x: sum(x)}, axis=1).reset_index
