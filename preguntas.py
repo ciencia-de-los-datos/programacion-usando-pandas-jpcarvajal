@@ -231,4 +231,4 @@ def pregunta_13():
     """
 
     a = pd.merge(tbl0, tbl2)
-    return a.groupby('_c1').agg({'_c5b': lambda x: sum(x)}, axis=1).reset_index
+    return a.groupby('_c1').agg({'_c5b': lambda x: sum(x)}, axis=1).reset_index()
